@@ -383,3 +383,13 @@ function hideError() {
 
   errorMessage.classList.add('hidden');
 }
+
+if (typeof module !== 'undefined') {
+  module.exports = {
+    buscarCoordenadas,
+    buscarClima,
+    obterDescricaoClima,
+    obterIconeClima,
+    formatarDataHora,
+  };
+}

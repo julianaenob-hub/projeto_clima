@@ -198,6 +198,14 @@ function exibirResultado(clima, cidade, pais) {
 
   // Data e hora
   dateTimeEl.textContent = formatarDataHora(clima.time);
+  // Umidade
+humidityEl.textContent = `${umidade}%`;
+
+// Vento
+windSpeedEl.textContent = `${velocidadeVento} km/h`;
+
+// Precipitação
+precipitationEl.textContent = `${precipitacao} mm`;
 
 
   

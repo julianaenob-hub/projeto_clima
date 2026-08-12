@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Previsão do Tempo</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Tela inicial: formulário de busca -->
+    <section id="search-card" class="card">
+      <h1 class="title">Previsão do Tempo</h1>
+
+      <form id="search-form" class="search-form">
+        <input
+          type="text"
+          id="city-input"
+          class="city-input"
+          placeholder="Digite o nome da cidade"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn-buscar">Buscar</button>
+      </form>
+
+      <p id="error-message" class="error-message hidden">
+        Cidade não encontrada. Tente novamente.
+      </p>
+    </section>
+
+    <!-- Tela de resultado: temperatura da cidade -->
+    <section id="result-card" class="card hidden">
+      <p id="temperature" class="temperature">--°</p>
+      <p id="city-name" class="city-name">Cidade, País</p>
+      <button id="back-btn" class="btn-voltar" title="Nova busca" aria-label="Nova busca">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3L2 12H5V21H10V15H14V21H19V12H22L12 3Z" fill="white"/>
+        </svg>
+      </button>
+    </section>
+
+  </main>
+
+  <script src="./assets/js/api.js"></script>
+</body>
+</html>

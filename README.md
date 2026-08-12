@@ -56,8 +56,9 @@ Os dados meteorológicos são fornecidos pelo Open-Meteo e utilizados de acordo 
 
 ⸻
 
-📁 Estrutura do projeto
+## 📁 Estrutura do projeto
 
+```text
 projeto_clima/
 │
 ├── assets/

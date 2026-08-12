@@ -10,6 +10,9 @@ const backBtn = document.getElementById('back-btn');
 const weatherDescriptionEl = document.getElementById('weather-description');
 const weatherIconEl = document.getElementById('weather-icon');
 const dateTimeEl = document.getElementById('date-time');
+const humidityEl = document.getElementById('humidity');
+const windSpeedEl = document.getElementById('wind-speed');
+const precipitationEl = document.getElementById('precipitation');
 
 // ---------- Envio do formulário ----------
 searchForm.addEventListener('submit', async (event) => {
@@ -128,8 +131,9 @@ async function buscarCoordenadas(cidade) {
  * console.log(clima.temperature_2m);
  */
 async function buscarClima(latitude, longitude) {
+  
   const url =
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,is_day&timezone=auto`;
+  `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,is_day,relative_humidity_2m,wind_speed_10m,precipitation&timezone=auto`;
 
   try {
     const response = await fetch(url);
@@ -173,6 +177,9 @@ function exibirResultado(clima, cidade, pais) {
   const temperatura = clima.temperature_2m;
   const codigoClima = clima.weather_code;
   const isDay = clima.is_day;
+  const umidade = clima.relative_humidity_2m;
+  const velocidadeVento = clima.wind_speed_10m;
+  const precipitacao = clima.precipitation;
 
   const descricao = obterDescricaoClima(codigoClima);
   const icone = obterIconeClima(codigoClima, isDay);
@@ -191,6 +198,11 @@ function exibirResultado(clima, cidade, pais) {
 
   // Data e hora
   dateTimeEl.textContent = formatarDataHora(clima.time);
+
+// Informações meteorológicas adicionais
+humidityEl.textContent = `${umidade}%`;
+windSpeedEl.textContent = `${velocidadeVento} km/h`;
+precipitationEl.textContent = `${precipitacao} mm`;
 
   // Muda o fundo conforme dia ou noite
   alterarTema(isDay);

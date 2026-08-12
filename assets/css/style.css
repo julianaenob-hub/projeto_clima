@@ -270,6 +270,48 @@ body {
   text-transform: capitalize;
 }
 
+
+/* ---------- Informações meteorológicas adicionais ---------- */
+
+.weather-details {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.weather-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 8px;
+  background: #fff4f8;
+  border: 1px solid #ead7e0;
+  border-radius: 16px;
+}
+
+.detail-icon {
+  font-size: 1.3rem;
+}
+
+.detail-label {
+  color: #a66b87;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  color: #4a4054;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+/* ---------- Botão voltar ---------- */
+
 .btn-voltar {
   border: none;
   border-radius: 25px;
@@ -343,6 +385,19 @@ body.night-mode .btn-voltar {
   color: #f3c9dc;
 }
 
+body.night-mode .weather-detail {
+  background: #29263d;
+  border-color: #51415b;
+}
+
+body.night-mode .detail-label {
+  color: #e7aeca;
+}
+
+body.night-mode .detail-value {
+  color: #fff2f8;
+}
+
 
 /* ---------- Responsivo ---------- */
 
@@ -383,5 +438,17 @@ body.night-mode .btn-voltar {
 
   .temperature {
     font-size: 3rem;
+  }
+
+  .weather-details {
+    gap: 6px;
+  }
+
+  .weather-detail {
+    padding: 12px 5px;
+  }
+
+  .detail-label {
+    font-size: 0.55rem;
   }
 }

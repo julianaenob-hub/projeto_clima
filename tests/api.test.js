@@ -114,11 +114,14 @@ describe('buscarCoordenadas', () => {
 // buscarClima
 // ==========================================================
 describe('buscarClima', () => {
-  test('retorna os dados climáticos atuais', async () => {
+  test('retorna os dados climáticos atuais e as variáveis adicionais', async () => {
     const currentMock = {
       temperature_2m: 25.3,
       weather_code: 0,
       is_day: 1,
+      relative_humidity_2m: 65,
+      wind_speed_10m: 12.5,
+      precipitation: 0,
       time: '2026-08-12T10:00',
     };
 
@@ -129,6 +132,13 @@ describe('buscarClima', () => {
     const resultado = await buscarClima(-23.5505, -46.6333);
 
     expect(resultado).toEqual(currentMock);
+
+    // Verifica as novas variáveis meteorológicas
+    expect(resultado.relative_humidity_2m).toBe(65);
+    expect(resultado.wind_speed_10m).toBe(12.5);
+    expect(resultado.precipitation).toBe(0);
+
+    // Verifica se a API de previsão foi chamada
     expect(global.fetch).toHaveBeenCalledWith(
       expect.stringContaining('api.open-meteo.com/v1/forecast')
     );

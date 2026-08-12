@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8dce8, #dcecff);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -21,7 +22,6 @@ body {
 .hidden {
   display: none !important;
 }
-
 
 /* ---------- Tela de abertura ---------- */
 
@@ -93,14 +93,15 @@ body {
   font-size: 0.75rem;
 }
 
-
 /* ---------- Aplicação ---------- */
 
 .weather-app {
   width: 100%;
   max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 /* ---------- Cards ---------- */
 
@@ -112,7 +113,6 @@ body {
   box-shadow: 0 20px 50px rgba(91, 76, 92, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
-
 
 /* ---------- Tela de busca ---------- */
 
@@ -201,7 +201,6 @@ body {
   transform: translateY(-2px);
 }
 
-
 /* ---------- Mensagem de erro ---------- */
 
 .error-message {
@@ -212,7 +211,6 @@ body {
   color: #b24d70;
   font-size: 0.8rem;
 }
-
 
 /* ---------- Resultado ---------- */
 
@@ -270,7 +268,6 @@ body {
   text-transform: capitalize;
 }
 
-
 /* ---------- Informações meteorológicas adicionais ---------- */
 
 .weather-details {
@@ -309,7 +306,6 @@ body {
   font-weight: 700;
 }
 
-
 /* ---------- Botão voltar ---------- */
 
 .btn-voltar {
@@ -328,7 +324,6 @@ body {
   background: #e8bed1;
   transform: translateY(-2px);
 }
-
 
 /* ---------- Modo noturno ---------- */
 
@@ -398,11 +393,44 @@ body.night-mode .detail-value {
   color: #fff2f8;
 }
 
+/* ---------- Avisos legais ---------- */
+
+.legal-footer {
+  width: 100%;
+  max-width: 520px;
+  margin: 18px auto 0;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.legal-footer p {
+  color: #7f7180;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  margin-bottom: 7px;
+}
+
+.legal-footer a {
+  color: #a66b87;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-footer a:hover {
+  text-decoration: underline;
+}
+
+body.night-mode .legal-footer p {
+  color: #c9b8c7;
+}
+
+body.night-mode .legal-footer a {
+  color: #e7aeca;
+}
 
 /* ---------- Responsivo ---------- */
 
 @media (max-width: 600px) {
-
   body {
     padding: 16px;
   }
@@ -450,5 +478,13 @@ body.night-mode .detail-value {
 
   .detail-label {
     font-size: 0.55rem;
+  }
+
+  .legal-footer {
+    padding: 0 5px;
+  }
+
+  .legal-footer p {
+    font-size: 0.62rem;
   }
 }

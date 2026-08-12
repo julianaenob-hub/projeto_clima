@@ -65,13 +65,14 @@
           <span>⌕</span>
 
           <input
-            type="text"
-            id="city-input"
-            class="city-input"
-            placeholder="Digite uma cidade..."
-            autocomplete="off"
-            required
-          />
+        type="text"
+         id="city-input"
+          class="city-input"
+          placeholder="Digite uma cidade..."
+          autocomplete="off"
+         maxlength="100"
+        required
+        />
         </div>
 
         <button type="submit" class="btn-buscar">
@@ -162,6 +163,37 @@
       weatherApp.classList.remove('hidden');
     });
   </script>
+
+
+  <!-- ---------- Avisos de Privacidade e Licenciamento ---------- -->
+
+  <footer class="legal-footer">
+
+    <p class="privacy-notice">
+      🔒 Esta aplicação não armazena nem compartilha as pesquisas realizadas.
+      As informações digitadas são utilizadas apenas para consultar a previsão
+      do tempo em tempo real. As requisições são enviadas à Open-Meteo,
+      que possui sua própria política de privacidade.
+    </p>
+
+    <p class="license-notice">
+      📜 Dados meteorológicos fornecidos por
+      <a
+        href="https://open-meteo.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open-Meteo
+      </a>
+      sob licença CC BY 4.0.
+    </p>
+
+    <p class="icons-notice">
+      ☁️ Ícones meteorológicos fornecidos por Weather Icons,
+      licenciados sob SIL Open Font License 1.1.
+    </p>
+
+  </footer>
 
 </body>
 </html>

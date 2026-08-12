@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Previsão do Tempo</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
 </head>
 <body>
 
@@ -31,16 +32,27 @@
       </p>
     </section>
 
-    <!-- Tela de resultado: temperatura da cidade -->
-    <section id="result-card" class="card hidden">
-      <p id="temperature" class="temperature">--°</p>
-      <p id="city-name" class="city-name">Cidade, País</p>
-      <button id="back-btn" class="btn-voltar" title="Nova busca" aria-label="Nova busca">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 3L2 12H5V21H10V15H14V21H19V12H22L12 3Z" fill="white"/>
-        </svg>
-      </button>
-    </section>
+  <!-- Tela de resultado: temperatura da cidade -->
+<section id="result-card" class="card hidden">
+
+  <div class="weather-main">
+    <i id="weather-icon" class="wi"></i>
+    <p id="temperature" class="temperature">--°C</p>
+  </div>
+
+  <p id="city-name" class="city-name">Cidade, País</p>
+
+  <p id="weather-description" class="weather-description"></p>
+
+  <div id="date-time" class="date-time"></div>
+
+  <button id="back-btn" class="btn-voltar" title="Nova busca" aria-label="Nova busca">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3L2 12H5V21H10V15H14V21H19V12H22L12 3Z" fill="white"/>
+    </svg>
+  </button>
+
+</section>
 
   </main>
 

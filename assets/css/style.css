@@ -14,6 +14,24 @@ body {
   padding: 20px;
 }
 
+/* ---------- Modo claro e modo noturno ---------- */
+
+body.day-mode {
+  background: linear-gradient(180deg, #a6d4f2 0%, #eaf6fc 100%);
+}
+
+body.night-mode {
+  background: linear-gradient(180deg, #071b2c 0%, #173b59 100%);
+}
+
+body.night-mode .card {
+  background: #ffffff;
+}
+
+body.night-mode .weather-main {
+  background: #dcecf7;
+}
+
 .container {
   width: 100%;
   max-width: 420px;
@@ -29,6 +47,28 @@ body {
 
 .hidden {
   display: none;
+}
+
+/* ---------- Informações do clima ---------- */
+
+#date-time {
+  color: #4a5b6b;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+#weather-icon {
+  display: block;
+  color: #1f3b57;
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+#weather-description {
+  color: #4a5b6b;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* ---------- Tela de busca ---------- */
@@ -88,17 +128,49 @@ body {
 
 /* ---------- Tela de resultado ---------- */
 
+.weather-main {
+  background: #dcecf7;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+#weather-icon {
+  font-size: 3.5rem;
+  color: #2f80ed;
+}
+
 .temperature {
   font-size: 3.5rem;
   font-weight: 700;
   color: #1f3b57;
+  margin: 0;
 }
 
 .city-name {
-  margin-top: 6px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1f3b57;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.weather-description {
   color: #4a5b6b;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.date-time {
+  color: #7a8996;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  margin-bottom: 35px;
 }
 
 .btn-voltar {
@@ -112,6 +184,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s ease;
+  margin-top: 20px;
 }
 
 .btn-voltar:hover {

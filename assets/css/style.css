@@ -491,10 +491,12 @@ body.night-mode .legal-footer a {
 
   .weather-details {
     gap: 6px;
+    flex-wrap: wrap;
   }
 
   .weather-detail {
     padding: 12px 5px;
+    min-width: 80px;
   }
 
   .detail-label {
@@ -502,10 +504,59 @@ body.night-mode .legal-footer a {
   }
 
   .legal-footer {
-    padding: 0 5px;
+    padding: 12px 10px;
   }
 
   .legal-footer p {
     font-size: 0.62rem;
+  }
+}
+
+/* --------Responsivo celular ----------- */
+
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .welcome-card,
+  .card {
+    padding: 20px 14px;
+  }
+
+  .welcome-card h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .search-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .weather-main {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .weather-main .wi {
+    font-size: 3rem;
+  }
+
+  .temperature {
+    font-size: 2.4rem;
+  }
+
+  .weather-details {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .weather-detail {
+    min-width: 100px;
+    flex: 1 1 45%;
+  }
+
+  .legal-footer p {
+    font-size: 0.58rem;
   }
 }

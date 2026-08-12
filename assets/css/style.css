@@ -9,7 +9,6 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8dce8, #dcecff);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +16,11 @@ body {
   padding: 20px;
   color: #3f4055;
   transition: background 0.5s ease;
+  background-image: url('../img/dois.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .hidden {
@@ -328,13 +332,24 @@ body {
 /* ---------- Modo noturno ---------- */
 
 body.night-mode {
-  background: linear-gradient(135deg, #17162d, #302044, #45283f);
+  background-image: url('../img/noite.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 body.night-mode .card,
 body.night-mode .welcome-card {
   background: rgba(35, 31, 52, 0.96);
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.day-mode {
+  background-image: url('../img/nuvem.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body.night-mode .welcome-card h1,
@@ -399,8 +414,10 @@ body.night-mode .detail-value {
   width: 100%;
   max-width: 520px;
   margin: 18px auto 0;
-  padding: 0 10px;
+  padding: 12px 14px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
 }
 
 .legal-footer p {
@@ -420,8 +437,13 @@ body.night-mode .detail-value {
   text-decoration: underline;
 }
 
+body.night-mode .legal-footer {
+  background: rgba(20, 18, 35, 0.65);
+}
+
 body.night-mode .legal-footer p {
   color: #c9b8c7;
+  
 }
 
 body.night-mode .legal-footer a {

@@ -199,11 +199,8 @@ function exibirResultado(clima, cidade, pais) {
   // Data e hora
   dateTimeEl.textContent = formatarDataHora(clima.time);
 
-// Informações meteorológicas adicionais
-humidityEl.textContent = `${umidade}%`;
-windSpeedEl.textContent = `${velocidadeVento} km/h`;
-precipitationEl.textContent = `${precipitacao} mm`;
 
+  
   // Muda o fundo conforme dia ou noite
   alterarTema(isDay);
 

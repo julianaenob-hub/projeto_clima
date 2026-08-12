@@ -3,59 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Previsão do Tempo</title>
+
+  <title>The Weather Girl ♡</title>
+
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+  />
 </head>
+
 <body>
 
-  <main class="container">
+  <!-- ---------- Tela de abertura ---------- -->
+  <section id="welcome-screen" class="welcome-screen">
 
-    <!-- Tela inicial: formulário de busca -->
-    <section id="search-card" class="card">
-      <h1 class="title">Previsão do Tempo</h1>
+    <div class="welcome-card">
+
+      <div class="welcome-icon">☁️</div>
+
+      <p class="small-title">WELCOME TO</p>
+
+      <h1>THE<br>WEATHER<br>GIRL</h1>
+
+      <p class="welcome-text">
+        Your daily weather,<br>
+        but make it fabulous ♡
+      </p>
+
+      <button id="start-btn" class="start-btn">
+        VER PREVISÃO ✨
+      </button>
+
+    </div>
+
+    <p class="footer-text">
+      ☁️ Weather made pretty for you ♡
+    </p>
+
+  </section>
+
+
+  <!-- ---------- Aplicação ---------- -->
+  <main id="weather-app" class="weather-app hidden">
+
+    <!-- Tela de busca -->
+    <section id="search-card" class="card search-card">
+
+      <p class="hello">HELLO, DARLING ♡</p>
+
+      <h2>Onde vamos hoje?</h2>
+
+      <p class="subtitle">
+        Descubra a previsão do tempo da sua cidade.
+      </p>
 
       <form id="search-form" class="search-form">
-        <input
-          type="text"
-          id="city-input"
-          class="city-input"
-          placeholder="Digite o nome da cidade"
-          autocomplete="off"
-          required
-        />
-        <button type="submit" class="btn-buscar">Buscar</button>
+
+        <div class="input-wrapper">
+          <span>⌕</span>
+
+          <input
+            type="text"
+            id="city-input"
+            class="city-input"
+            placeholder="Digite uma cidade..."
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-buscar">
+          BUSCAR ✨
+        </button>
+
       </form>
 
       <p id="error-message" class="error-message hidden">
         Cidade não encontrada. Tente novamente.
       </p>
+
     </section>
 
-  <!-- Tela de resultado: temperatura da cidade -->
-<section id="result-card" class="card hidden">
 
-  <div class="weather-main">
-    <i id="weather-icon" class="wi"></i>
-    <p id="temperature" class="temperature">--°C</p>
-  </div>
+    <!-- Tela de resultado -->
+    <section id="result-card" class="card result-card hidden">
 
-  <p id="city-name" class="city-name">Cidade, País</p>
+      <div class="weather-main">
 
-  <p id="weather-description" class="weather-description"></p>
+        <i id="weather-icon" class="wi"></i>
 
-  <div id="date-time" class="date-time"></div>
+        <p id="temperature" class="temperature">--°C</p>
 
-  <button id="back-btn" class="btn-voltar" title="Nova busca" aria-label="Nova busca">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 3L2 12H5V21H10V15H14V21H19V12H22L12 3Z" fill="white"/>
-    </svg>
-  </button>
+      </div>
 
-</section>
+      <p id="city-name" class="city-name">
+        Cidade, País
+      </p>
+
+      <p id="weather-description" class="weather-description">
+        Céu limpo
+      </p>
+
+      <div class="divider"></div>
+
+      <p id="date-time" class="date-time">
+        segunda-feira, 13 de outubro de 2025
+      </p>
+
+      <button
+        id="back-btn"
+        class="btn-voltar"
+        title="Nova busca"
+        aria-label="Nova busca"
+      >
+        ♡ NOVA BUSCA
+      </button>
+
+    </section>
 
   </main>
 
+
   <script src="./assets/js/api.js"></script>
+
+  <script>
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const weatherApp = document.getElementById('weather-app');
+    const startBtn = document.getElementById('start-btn');
+
+    startBtn.addEventListener('click', () => {
+      welcomeScreen.classList.add('hidden');
+      weatherApp.classList.remove('hidden');
+    });
+  </script>
+
 </body>
 </html>
